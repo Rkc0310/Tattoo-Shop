@@ -1,0 +1,28 @@
+@config "../tailwind.config.js";
+@import "tailwindcss";
+
+/* Base layout only */
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  background-image: url("/tatoobg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Dark overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  pointer-events: none;
+  z-index: -1;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
