@@ -26,3 +26,6 @@ body::before {
 * {
   -webkit-font-smoothing: antialiased;
 }
+/* html, body {
+  background-color: #000;
+} */

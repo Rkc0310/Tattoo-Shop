@@ -1,8 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom"
+import { useEffect } from 'react';
 
 const Header = () => {
       const [open, setOpen] =useState(false)
+
+    const location = useLocation()
+
+useEffect(() => {
+  setOpen(false)
+}, [location])
+
     return (
         <div>
             <header className="sticky top-0 z-50 bg-stone-950/95 backdrop-blur-sm border-b border-amber-600/20">

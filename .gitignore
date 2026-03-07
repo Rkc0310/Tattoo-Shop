@@ -1,6 +1,9 @@
 
 .env
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9d31aad (gitignore)
 # Logs
 logs
 *.log
