@@ -1,7 +1,3 @@
-/**
- * HOME PAGE - Landing page for the tattoo shop
- */
-
 import { Link } from 'react-router-dom'
 import Services from '../components/Services'
 import RecentTattoo from '../components/RecentTattoo'

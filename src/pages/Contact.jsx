@@ -1,6 +1,5 @@
 export default function Contact() {
   
-  
   // WhatsApp setup
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '919302966172'
   const whatsappMessage = encodeURIComponent(

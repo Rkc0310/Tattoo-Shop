@@ -1,17 +1,3 @@
-/**
- * APPOINTMENT PAGE
- *
- * This page:
- * - Shows a booking form (name, contact, date, style, notes)
- * - Saves the data into Appwrite database collection "appointments"
- * - Can also generate a WhatsApp link with the same info
- *
- * React concepts:
- * - useState: to store form values + loading + success/error
- * - Controlled inputs: value + onChange for each field
- * - onSubmit handler: prevent default, then run async Appwrite call
- */
-
 import { useState } from 'react'
 
 export default function Appointment() {
@@ -32,8 +18,7 @@ export default function Appointment() {
   const [errorMessage, setErrorMessage] = useState('')
 
   // Generic change handler:
-  // - event.target.name gives the input's "name" attribute
-  // - event.target.value is what the user typed
+
   function handleChange(event) {
     const { name, value } = event.target
     setForm((prev) => ({
@@ -73,7 +58,6 @@ export default function Appointment() {
     }
 
     // WhatsApp-only flow (no database saving)
-    // We open WhatsApp with all details and still show a success message.
     setIsSubmitting(true)
     try {
       window.open(whatsappLink, '_blank', 'noopener,noreferrer')

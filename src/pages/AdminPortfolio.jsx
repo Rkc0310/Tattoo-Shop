@@ -1,11 +1,3 @@
-/**
- * ADMIN PORTFOLIO PAGE
- *
- * - Protected by Appwrite email/password authentication
- * - Lets admin upload a tattoo image + details
- * - Saves file to Appwrite Storage and metadata to Appwrite database "portfolio"
- */
-
 import { useEffect, useState } from "react";
 import { ID } from "appwrite";
 import { account, storage, databases, APPWRITE_IDS } from "../appwrite/client";
