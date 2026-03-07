@@ -1,13 +1,3 @@
-/**
- * ABOUT PAGE
- *
- * Tells the story of the studio + artist.
- * This is a presentational React component:
- * - function About() { ... } returns JSX
- * - JSX is just HTML-like syntax inside JavaScript
- * - Tailwind classes control all the styling
- */
-
 export default function About() {
   return (
     <section className="py-16 px-4">
@@ -27,7 +17,7 @@ export default function About() {
           </p>
         </header>
 
-        {/* Two-column layout: text + “profile card” */}
+        {/* Two-column layout: text + profile card */}
         <div className="grid gap-10 md:grid-cols-[2fr,1.4fr] items-start">
           {/* Story */}
           <div className="font-popins space-y-5 text-sm md:text-base text-stone-300 leading-relaxed">

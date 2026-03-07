@@ -1,10 +1,3 @@
-/**
- * App.jsx - Root component & Router setup
- * 
- * React Router: We use createBrowserRouter + RouterProvider for routing.
- * - Route "/" uses Layout as wrapper, Home as the default child
- * - Outlet in Layout renders the child route (Home for now)
- */
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
