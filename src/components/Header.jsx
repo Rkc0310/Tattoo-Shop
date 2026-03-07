@@ -8,7 +8,7 @@ const Header = () => {
       const location = useLocation()
 
 useEffect(() => {
-  setMenuOpen(false)
+  setOpen(false)
 }, [location])
 
     return (
