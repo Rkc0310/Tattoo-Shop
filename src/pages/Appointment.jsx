@@ -7,18 +7,14 @@ export default function Appointment() {
     phone: '',
     email: '',
     date: '',
-    time: '',
-    style: '',
-    placement: '',
-    notes: '',
+    notes: '',    
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
 
-  // Generic change handler:
-
+  //  change handler:
   function handleChange(event) {
     const { name, value } = event.target
     setForm((prev) => ({
@@ -28,7 +24,7 @@ export default function Appointment() {
   }
 
   // Build WhatsApp message from form data
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '919302966172'
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '917489076641'
   const whatsappText = encodeURIComponent(
     [
       'New tattoo appointment inquiry:',
@@ -36,9 +32,6 @@ export default function Appointment() {
       `Phone: ${form.phone}`,
       form.email && `Email: ${form.email}`,
       form.date && `Preferred date: ${form.date}`,
-      form.time && `Preferred time: ${form.time}`,
-      form.style && `Style: ${form.style}`,
-      form.placement && `Placement: ${form.placement}`,
       form.notes && `Notes: ${form.notes}`,
     ]
       .filter(Boolean)
@@ -67,10 +60,7 @@ export default function Appointment() {
         phone: '',
         email: '',
         date: '',
-        time: '',
-        style: '',
-        placement: '',
-        notes: '',
+        notes: '',  
       })
     } catch (error) {
       console.error('Error opening WhatsApp:', error)
@@ -80,23 +70,25 @@ export default function Appointment() {
     }
   }
 
+
   return (
-    <section className="py-16 px-4 bg-stone-950">
+    <section id='appointment' className="py-16 px-4 ">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Heading */}
         <header className="text-center space-y-3">
-          <p className="text-amber-500/90 text-xs uppercase tracking-[0.3em] font-medium">
+          <p className="text-red-600 font-popins text-xs uppercase tracking-[0.3em] font-medium">
             Book Your Session
           </p>
-          <h1 className="text-3xl md:text-4xl font-bold text-stone-100">
+          <h1 className="text-3xl md:text-4xl font-bold text-stone-100 font-cinzel">
             Appointment Request
           </h1>
-          <p className="text-stone-400 max-w-2xl mx-auto text-sm md:text-base">
+          <p className="text-stone-400 font-poppins max-w-2xl mx-auto text-sm md:text-base">
             Tell us about your idea and preferred time. We&apos;ll review it and confirm
             your slot by message or call.
           </p>
         </header>
 
+        
         {/* Messages */}
         {errorMessage && (
           <div className="rounded-lg border border-red-500/50 bg-red-500/10 px-4 py-3 text-sm text-red-200">
@@ -109,6 +101,7 @@ export default function Appointment() {
           </div>
         )}
 
+
         {/* Form */}
         <form
           onSubmit={handleSubmit}
@@ -116,24 +109,19 @@ export default function Appointment() {
         >
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-1">
-              <label className="block text-sm text-stone-300" htmlFor="name">
-                Full Name *
-              </label>
-              <input
-                id="name"
+              <label className="block text-sm text-stone-300" htmlFor="name">Full Name </label>
+              <input id="name"
                 name="name"
                 type="text"
                 required
                 value={form.name}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-amber-500 focus:outline-none"
+                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-red-500 focus:outline-none"
               />
             </div>
 
             <div className="space-y-1">
-              <label className="block text-sm text-stone-300" htmlFor="phone">
-                Phone / WhatsApp *
-              </label>
+              <label className="block text-sm text-stone-300" htmlFor="phone">Phone / WhatsApp *</label>
               <input
                 id="phone"
                 name="phone"
@@ -141,7 +129,7 @@ export default function Appointment() {
                 required
                 value={form.phone}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-amber-500 focus:outline-none"
+                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-red-500 focus:outline-none"
               />
             </div>
 
@@ -155,36 +143,11 @@ export default function Appointment() {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-amber-500 focus:outline-none"
+                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-red-500 focus:outline-none"
               />
             </div>
-
-            <div className="space-y-1">
-              <label className="block text-sm text-stone-300" htmlFor="style">
-                Preferred Style
-              </label>
-              <select
-                id="style"
-                name="style"
-                value={form.style}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-amber-500 focus:outline-none"
-              >
-                <option value="">I&apos;m not sure yet</option>
-                <option value="fineline">Fineline</option>
-                <option value="blackwork">Blackwork</option>
-                <option value="neo-traditional">Neo-traditional</option>
-                <option value="realism">Realism</option>
-                <option value="lettering">Lettering</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="space-y-1">
-              <label className="block text-sm text-stone-300" htmlFor="date">
-                Preferred Date *
-              </label>
+             <div className="space-y-1">
+              <label className="block text-sm text-stone-300" htmlFor="date"> Preferred Date *</label>
               <input
                 id="date"
                 name="date"
@@ -192,36 +155,7 @@ export default function Appointment() {
                 required
                 value={form.date}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-amber-500 focus:outline-none"
-              />
-            </div>
-
-            <div className="space-y-1">
-              <label className="block text-sm text-stone-300" htmlFor="time">
-                Preferred Time
-              </label>
-              <input
-                id="time"
-                name="time"
-                type="time"
-                value={form.time}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-amber-500 focus:outline-none"
-              />
-            </div>
-
-            <div className="space-y-1">
-              <label className="block text-sm text-stone-300" htmlFor="placement">
-                Placement (body area)
-              </label>
-              <input
-                id="placement"
-                name="placement"
-                type="text"
-                placeholder="e.g. left forearm"
-                value={form.placement}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-amber-500 focus:outline-none"
+                className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-red-500 focus:outline-none"
               />
             </div>
           </div>
@@ -237,7 +171,7 @@ export default function Appointment() {
               placeholder="Tell us about size, text, references, color vs black, etc."
               value={form.notes}
               onChange={handleChange}
-              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-amber-500 focus:outline-none"
+              className="w-full rounded-lg border border-stone-700 bg-stone-900 px-3 py-2 text-sm text-stone-100 focus:border-red-500 focus:outline-none"
             />
           </div>
 
@@ -246,7 +180,7 @@ export default function Appointment() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-amber-600 hover:bg-amber-500 disabled:bg-amber-800 text-stone-950 text-sm font-semibold transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-red-600 hover:bg-red-500 disabled:bg-red-800 text-white text-sm font-semibold transition-colors"
             >
               {isSubmitting ? 'Sending...' : 'Send Request'}
             </button>
@@ -255,7 +189,7 @@ export default function Appointment() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs sm:text-sm font-semibold transition-colors"
+              className="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-red-600 hover:bg-red-500 text-white text-xs sm:text-sm font-semibold transition-colors"
             >
               Send this info via WhatsApp
             </a>

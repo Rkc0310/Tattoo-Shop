@@ -19,12 +19,12 @@ export default function Contact() {
 
 
   return (
-    <section className="py-16 px-4">
+    <section id="contact" className="py-16 px-4 ">
       <div className="max-w-6xl mx-auto space-y-10">
        
         {/* Heading */}
-        <header className="text-center space-y-3">
-          <p className="text-amber-500/90 text-xs uppercase tracking-[0.3em] font-medium">
+        <header className="text-center space-y-3 mt-5">
+          <p className="text-red-600 font-popins text-xs uppercase tracking-[0.3em] font-medium">
             Contact
           </p>
           <h1 className="font-cinzel text-3xl md:text-4xl font-bold text-stone-100">
@@ -35,11 +35,12 @@ export default function Contact() {
             consultation. We recommend booking a slot so we can give you our
             full attention.
           </p>
+          <div className="w-15 h-0.5 bg-red-600 mx-auto mt-4"></div>
         </header>
 
 
         {/* Info + Actions */}
-        <div className="grid gap-8 md:grid-cols-[1.3fr,2fr] items-start">
+        <div className="grid  grid-cols-1  md:grid-cols-2  gap-12 ">
           {/* Contact details */}
           <div className="space-y-6">
             <div className="space-y-2">
@@ -58,16 +59,16 @@ export default function Contact() {
 
             <div className="space-y-1 text-sm text-stone-300">
               <p>
-                <span className="text-amber-400 font-medium">Phone:</span>{' '}
-                <a href="tel:+917489076641" className="hover:text-amber-400">
+                <span className="text-red-600 font-medium">Phone:</span>{' '}
+                <a href="tel:+917489076641" className="hover:text-red-500">
                   +91 74890 76641
                 </a>
               </p>
               <p>
-                <span className="text-amber-400 font-medium">Email:</span>{' '}
+                <span className="text-red-600 font-medium">Email:</span>{' '}
                 <a
                   href="mailto:chandravanshib274@gmail.com"
-                  className="hover:text-amber-400"
+                  className="hover:text-red-500"
                 >
                   chandravanshib274@gmail.com
                 </a>
@@ -81,7 +82,7 @@ export default function Contact() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 border-2  rounded-lg text-white text-sm font-semibold    hover:bg-white hover:text-black transition-colors"
               >
                 <span>Chat on WhatsApp</span>
               </a>
@@ -89,7 +90,7 @@ export default function Contact() {
                 href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-amber-600 hover:bg-amber-500 text-stone-950 text-sm font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-red-600 hover:bg-red-500 text-stone-950 text-sm font-semibold transition-colors"
               >
                 <span>Navigate to Studio</span>
               </a>
@@ -99,7 +100,7 @@ export default function Contact() {
               href={googleMapsPlaceUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-xs text-stone-400 hover:text-amber-400"
+              className="block text-xs text-blue-400 hover:text-blue-600 transition-colors"
             >
               View full location on Google Maps
             </a>
@@ -109,7 +110,7 @@ export default function Contact() {
           {/* Google Map embed */}
           <div className="rounded-2xl overflow-hidden border border-stone-800 bg-stone-900">
             <div className="relative w-full pt-[60%]">
-              {/* Aspect-ratio box: pt-[60%] ≈ 16:10 */}
+              
               <iframe
                 title="InkArt Studio Location"
                 src={googleMapsEmbedSrc}

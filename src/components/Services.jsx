@@ -15,12 +15,6 @@ const Services = () => {
     },
      
     {
-    title: "Tattoo Removal",
-    desc: "Professional tattoo removal treatment.",
-    icon: "🧴"
-    },
-    
-    {
         title: 'Hygiene First',
         desc: 'Sterile equipment, single-use needles, and a clean studio environment.',
         icon: '🛡️'
@@ -36,28 +30,30 @@ const Services = () => {
 ];
 
     return (
-       <section className="py-20  text-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+       <section id="services" className="py-24 bg-black/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px8">
           
           {/* Title */} 
-          <div className="text-center mb-16">
-            <h2 className="font-cinzel text-4xl font-bold tracking-wide">SERVICES</h2>
-            <div className="w-15 h-0.5 bg-amber-400 mx-auto mt-4"></div>
+          <div className="text-center mb-16 text-white">
+            <h2 className="font-cinzel text-4xl md:text-5xl font-bold mb-4 tracking-wide">SERVICES</h2>
             <p className="font-poppins text-gray-400 mt-4 max-w-xl mx-auto">Professional tattoo services with hygiene and artistic excellence.</p>
+            <div className="w-15 h-0.5 bg-red-600 mx-auto mt-4"></div>
          </div>
 
          {/* Grid */}
-         <div className=" grid  md:grid-cols-3 gap-8">
+         <div className=" grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service,index)=>(
 
                 <div key={index}
-                 className="border border-gray-700 p-8 text-center rounded-lg hover:border-amber-400  hover:scale-105 transition duration-300 cursor-pointer bg-zinc-900/40 backdrop-blur"
-                >
-                    <div className="text-4xl mb-4"> {service.icon}</div>
-
-                    <h3 className=" font-cinzel text-xl  font-semibold mb-2">{service.title}</h3>
-                     
-                     <p className="font-poppins text-amber-400 font-semibold">{service.desc}</p>
+                 className=" group bg-zinc-900 border border-white/10 p-8 text-center rounded-lg hover:border-red-500 transition-all duration-300hover:shadow-lg hover:shadow-red-500/50">
+                    
+                <div className="mb-6"> 
+                    <div className="w-14 h-14 bg-red-600/10 border-red-600 flex items-center justify-center group-hover:bg-red-600 transition-colors duration-300">
+                        <span className="text-red-600 h-7 w-7  group-hover:text-white transition-colors duration-300">{service.icon}</span>
+                    </div>
+                </div>
+                <h3 className="text-white text-xl font-bold mb-3 ">{service.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{service.desc}</p>
                 </div>
             ))}
          </div>

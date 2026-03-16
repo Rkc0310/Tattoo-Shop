@@ -14,11 +14,9 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
-      { path: 'portfolio', element: <Portfolio /> },
-      { path: 'about', element: <About /> },
-      { path: 'contact', element: <Contact /> },
-      { path: 'appointment', element: <Appointment /> },
-      { path: 'admin/portfolio', element: <AdminPortfolio /> },
+      { path: '/portfolio', element: <Portfolio /> },
+      { path: '/appointment', element: <Appointment /> },
+      { path: '/admin/portfolio', element: <AdminPortfolio /> },
     ],
   },
 ])

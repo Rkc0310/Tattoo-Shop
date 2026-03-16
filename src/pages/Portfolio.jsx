@@ -37,11 +37,11 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section className="py-16 px-4">
+    <section id="portfolio" className="py-10 sm:py-12 lg:py-16   px-4">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <header className="mb-10 text-center">
-          <p className="font-popins text-amber-500/90 text-xs uppercase tracking-[0.3em] mb-3 font-medium">
+          <p className="font-popins text-red-500 text-xs uppercase tracking-[0.3em] mb-3 font-medium">
             Our Work
           </p>
 
@@ -56,7 +56,7 @@ export default function Portfolio() {
 
         {/* Loading */}
         {loading && (
-          <div className="text-center text-amber-300">Loading portfolio...</div>
+          <div className="text-center text-red-400">Loading portfolio...</div>
         )}
 
         {/* Error */}
@@ -68,7 +68,7 @@ export default function Portfolio() {
             {items.map((item) => (
               <article
                 key={item.id}
-                className="group rounded-2xl overflow-hidden bg-stone-900/70 border border-stone-800 hover:border-amber-500/40 transition"
+                className="group rounded-2xl overflow-hidden bg-stone-900/70 border border-stone-800 hover:border-red-500 transition"
               >
                 {/* Image */}
                 <div
@@ -88,7 +88,7 @@ export default function Portfolio() {
 
                 {/* Text */}
                 <div className="p-5 space-y-2">
-                  <h2 className="font-cinzel text-lg font-semibold text-stone-100 group-hover:text-amber-400 transition">
+                  <h2 className="font-cinzel text-lg font-semibold text-stone-100 group-hover:text-red-400 transition">
                     {item.title}
                   </h2>
 
