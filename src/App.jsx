@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: '/portfolio', element: <Portfolio /> },
       { path: '/appointment', element: <Appointment /> },
-      { path: '/admin/portfolio', element: <AdminPortfolio /> },
+      { path: '/admin/portfolio', element: <AdminPortfolio/> },
     ],
   },
 ])
@@ -24,7 +24,7 @@ export default function App() {
   return (
   <div> 
      <RouterProvider router={router}/>
-     
+      <Analytics />
   </div>
   )
 }
