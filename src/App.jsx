@@ -2,12 +2,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
-import About from './pages/About'
-import Contact from './pages/Contact'
 import Appointment from './pages/Appointment'
 import AdminPortfolio from './pages/AdminPortfolio'
+import { Analytics } from "@vercel/analytics/react"
 
-// Define all routes - we'll add more pages one by one
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,5 +21,12 @@ const router = createBrowserRouter([
 ])
 
 export default function App() {
-  return <RouterProvider router={router} />
+  return 
+  <div> 
+     <RouterProvider router={router}/>
+      <Analytics />
+  </div>
+  
+ 
+   
 }
