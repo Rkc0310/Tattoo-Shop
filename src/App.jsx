@@ -21,12 +21,10 @@ const router = createBrowserRouter([
 ])
 
 export default function App() {
-  return 
+  return (
   <div> 
      <RouterProvider router={router}/>
-      <Analytics />
+     
   </div>
-  
- 
-   
+  )
 }
