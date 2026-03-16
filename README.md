@@ -1,24 +1,56 @@
-# React + Vite
+ Tattoo Shop Portfolio Website
+A modern tattoo shop portfolio website built with **React, Tailwind CSS, and Appwrite**.  
+This platform allows tattoo artists to showcase their work and manage their tattoo gallery through a simple admin system.
 
-## Environment Variables
+Live Demo
+https://your-vercel-link.vercel.app
 
-Create a .env file in the root folder and add:
+  Features
+- Responsive modern UI
+- Tattoo gallery showcasing designs
+- Dynamic data fetching from Appwrite database
+- Admin panel for adding tattoo designs
+- Authentication system for secure access
+- Fast frontend built with React + Vite
 
-VITE_APPWRITE_ENDPOINT=your_endpoint
-VITE_APPWRITE_PROJECT_ID=your_project_id
-VITE_APPWRITE_DATABASE_ID=your_database_id
-VITE_APPWRITE_COLLECTION_ID=your_collection_id
+ 🛠 Tech Stack
+Frontend
+- HTML
+- JavaScript
+- React (Vite)
+- Tailwind CSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Backend / Database
+- Appwrite
 
-Currently, two official plugins are available:
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Deployment
+- Vercel
 
-## React Compiler
+ 📂 BasiC Project Structure
+src/
+│
+├── components/
+│   ├── Navbar.jsx
+│   ├──Servicess.jsx
+│   ├── RecentTattoo.jsx
+│   ├── Footer.jsx
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── Portfolio.jsx
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Appointment.jsx
+│ 
+├── appwrite/
+│   ├── client.js
+│
+├── App.jsx
+└── main.jsx
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create .env file and add:
+VITE_APPWRITE_ENDPOINT=
+VITE_APPWRITE_PROJECT_ID=
+VITE_DATABASE_ID=
+VITE_COLLECTION_ID=
